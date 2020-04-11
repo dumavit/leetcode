@@ -10,15 +10,18 @@ class Solution(object):
         result = ListNode()
         curr = result
         remainder = 0
-        l1_val = l1.val or 0
-        l2_val = l2.val or 0
-        while l1_val or l2_val or remainder:
-            s = l1_val + l2_val + remainder
+        while True:
+            s = remainder
+            if l1:
+                s += l1.val
+            if l2:
+                s += l2.val
             curr.val = s % 10
             remainder = s / 10
             curr.next = ListNode()
             curr = curr.next
-            l1_val =
+            l1 = l1.next if l1 else None
+            l2 = l2.next if l2 else None
         return result
 
 
