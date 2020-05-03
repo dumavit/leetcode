@@ -7,9 +7,5 @@ class TreeNode:
 
 
 class Solution:
-    def isValidSequence(self, node, arr, idx=0):
-        if node and node.val == arr[idx]:
-            if idx == len(arr) - 1:
-                return node.left is None and node.right is None
-            return self.isValidSequence(node.left, arr, idx+1) or self.isValidSequence(node.right, arr, idx+1)
-        return False
+    def isValidSequence(self, n, arr, idx=0):
+        return n and n.val == arr[idx] and (n.left == n.right == None if idx == len(arr) - 1 else self.isValidSequence(n.left, arr, idx+1) or self.isValidSequence(n.right, arr, idx+1))
