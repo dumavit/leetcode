@@ -8,3 +8,4 @@ class Solution:
             if num % 2 == 0:
                 options.add(num / 2)
         return False
+        
