@@ -1,9 +1,8 @@
 class Solution:
     def removeDuplicates(self, nums):
-        idx = 0
-        while idx < len(nums)-1:
-            if nums[idx] == nums[idx+1]:
-                nums.pop(idx)
-            else:
-                idx += 1
-        return len(nums)
+        cc = 0
+        for i in range(1, len(nums)):
+            if nums[cc] != nums[i]:
+                cc += 1
+                nums[cc] = nums[i]
+        return cc + 1
