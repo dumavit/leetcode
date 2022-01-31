@@ -35,7 +35,8 @@ class MyHashMap:
         Removes the mapping of the specified value key if this map contains a mapping for the key
         """
         arr_index = self.hashcode(key)
-        self.arr[arr_index] = [item for item in self.arr[arr_index] if item[0] != key]
+        self.arr[arr_index] = [
+            item for item in self.arr[arr_index] if item[0] != key]
 
     def hashcode(self, key):
         return key % self.hash_map_volume
